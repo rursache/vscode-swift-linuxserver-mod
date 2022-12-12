@@ -14,9 +14,13 @@ echo 'export PATH=/swift/usr/bin:"${PATH}"' >> /root/.bashrc
 source /root/.bashrc
 
 echo "Checking Swift version"
-swift -version
+/swift/usr/bin/swift -version
 
 echo "Adding Swift to PATH for VSCode"
 echo 'export PATH=/swift/usr/bin:"${PATH}"' >> /config/.bashrc && source /config/.bashrc
 
-echo "Swift binaries installed for VSCode. Make sure to also install the 'sswg.swift-lang' extension in VSCode"
+echo "Swift binaries installed for VSCode. Trying to install the sswg.swift-lang extension"
+
+install-extension sswg.swift-lang
+
+echo "Please manually download and install 'sswg.swift-lang' from 'https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang' if you see errors above"
