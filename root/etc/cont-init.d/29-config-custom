@@ -8,14 +8,15 @@ curl https://download.swift.org/swift-5.7.1-release/ubuntu2204/swift-5.7.1-RELEA
 tar zxvf swift.tar.gz
 rm swift.tar.gz
 mv swift-5.7.1-RELEASE-ubuntu22.04/ swift
-sudo mv swift/ /
-echo 'export PATH=/swift/usr/bin:"${PATH}"' >> ~/.bashrc
-source ~/.bashrc
+
+echo "Adding Swift to PATH"
+echo 'export PATH=/swift/usr/bin:"${PATH}"' >> /root/.bashrc
+source /root/.bashrc
 
 echo "Checking Swift version"
 swift -version
 
-echo "Adding Swift path for VSCode"
+echo "Adding Swift to PATH for VSCode"
 echo 'export PATH=/swift/usr/bin:"${PATH}"' >> /config/.bashrc && source /config/.bashrc
 
-echo "Swift installed for VSCode"
+echo "Swift binaries installed for VSCode. Make sure to also install the 'sswg.swift-lang' extension in VSCode"
