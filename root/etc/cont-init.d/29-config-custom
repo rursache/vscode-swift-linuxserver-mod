@@ -1,0 +1,21 @@
+#!/usr/bin/with-contenv bash
+
+echo "Installing Swift dependencies"
+apt update && apt install binutils git gnupg2 libc6-dev libcurl4 libedit2 libgcc-9-dev libpython2.7 libsqlite3-0 libstdc++-9-dev libxml2 libz3-dev pkg-config tzdata uuid-dev zlib1g-dev libpython3.10-dev -y
+
+echo "Installing Swift binaries"
+curl https://download.swift.org/swift-5.7.1-release/ubuntu2204/swift-5.7.1-RELEASE/swift-5.7.1-RELEASE-ubuntu22.04.tar.gz --output swift.tar.gz 
+tar zxvf swift.tar.gz
+rm swift.tar.gz
+mv swift-5.7.1-RELEASE-ubuntu22.04/ swift
+sudo mv swift/ /
+echo 'export PATH=/swift/usr/bin:"${PATH}"' >> ~/.bashrc
+source ~/.bashrc
+
+echo "Checking Swift version"
+swift -version
+
+echo "Adding Swift path for VSCode"
+echo 'export PATH=/swift/usr/bin:"${PATH}"' >> /config/.bashrc && source /config/.bashrc
+
+echo "Swift installed for VSCode"
