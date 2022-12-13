@@ -10,6 +10,9 @@ This MOD installs Swift binaries to be used in VSCode at startup. [linuxserver](
 > 
 > This MOD will try to install it if you provide the correct envs.
 
+## TODO
+- [Merge request](https://github.com/linuxserver/docker-mods/tree/template) for this MOD to be included in linuxserver [MOD list](https://mods.linuxserver.io/?mod=code-server) ([example](https://github.com/linuxserver/docker-mods/pull/538))
+
 ### Full example
 ```sh
 docker run -d \
