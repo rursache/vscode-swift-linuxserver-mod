@@ -2,7 +2,7 @@
 
 ![Swift](https://i.imgur.com/1fpf5HJ.png)
 
-This MOD installs Swift binaries to be used in VSCode at startup. [linuxserver](https://www.linuxserver.io/)'s [code-server image](https://hub.docker.com/r/linuxserver/code-server) is used as core
+This MOD installs Swift binaries to be used in VSCode. [linuxserver](https://www.linuxserver.io/)'s [code-server image](https://hub.docker.com/r/linuxserver/code-server) is used as core
 
 > **Note** 
 >
