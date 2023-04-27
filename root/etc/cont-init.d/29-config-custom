@@ -5,19 +5,14 @@ apt update && apt install binutils git gnupg2 libc6-dev libcurl4 libedit2 libgcc
 
 echo "Installing Swift binaries"
 curl https://download.swift.org/swift-5.8-release/ubuntu2204/swift-5.8-RELEASE/swift-5.8-RELEASE-ubuntu22.04.tar.gz --output swift.tar.gz 
-tar zxvf swift.tar.gz
+tar --strip-components=1 -zxf swift.tar.gz --directory /
 rm swift.tar.gz
-mv swift-5.8-RELEASE-ubuntu22.04/ swift
-
-echo "Adding Swift to PATH"
-echo 'export PATH=/swift/usr/bin:"${PATH}"' >> /root/.bashrc
-source /root/.bashrc
 
 echo "Checking Swift version"
-/swift/usr/bin/swift -version
+/usr/bin/swift -version
 
 echo "Adding Swift to PATH for VSCode"
-echo 'export PATH=/swift/usr/bin:"${PATH}"' >> /config/.bashrc && source /config/.bashrc
+echo 'export PATH=/usr/bin:"${PATH}"' >> /config/.bashrc && source /config/.bashrc
 
 echo "Swift binaries installed for VSCode. Trying to install the sswg.swift-lang extension"
 
